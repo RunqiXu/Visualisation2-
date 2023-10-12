@@ -1,0 +1,164 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 1000,
+    "height": 400,
+    "config": {
+        "view": {
+            "stroke": "transparent"
+        }
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/RunqiXu/Homework10/main/dataused.csv"
+    },
+    
+  "params": [
+    { 
+      "name": "Year_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          2019,
+          2021
+        ],
+        "labels": [
+          "2019",
+          "2021"
+        ],
+        "name": "Year: "
+      }
+    }
+  ],
+
+  "projection": {
+    "type": "equirectangular", 
+    "scale": 130, 
+    "translate": [500, 240] 
+  },
+
+
+    "transform": [
+        {
+            "filter": "Year_selection == null || datum.Year == Year_selection"
+          },
+        {
+            "lookup": "Country of birth",
+            "from": {
+                "data": {
+                    "url": "https://raw.githubusercontent.com/RunqiXu/Homework10/main/countries.json",
+                    "format": {
+                        "type": "topojson",
+                        "feature": "ne_110m_admin_0_countries"
+                    }
+                },
+                "key": "properties.NAME"
+            },
+            "as": "geo"
+        }
+    ],
+
+    "layer": [
+        {
+          "data": {
+            "values": [
+              {"type": "Sphere", "r": 5000}
+            ]
+          },
+          "mark": {"type": "geoshape", "fill": "skyblue", "stroke": "transparent"}
+          
+        },
+     {
+
+
+    "mark": {
+        "type": "geoshape"
+    },
+    "encoding": {
+        "shape": {
+            "field": "geo",
+            "type": "geojson"
+        },"color": {
+            "field": "Net Migration",
+            "type": "quantitative","legend":{"orient":"top-right","offset": 320}
+        },
+        "tooltip": [
+            {
+                "field": "Country of birth",
+                "type": "nominal",
+                "title": "Country of birth"
+            },
+            {
+                "field": "Year",
+                "type": "quantitative"
+            },
+            {
+                "field": "Net Migration",
+                "type": "quantitative"
+ 
+            }   
+                ]
+        
+    }
+    
+},
+
+{
+    "mark": {"type": "geoshape", "stroke": "gray", "strokeOpacity": 0.6}, 
+    "data": {"name": "sphere"} 
+},
+{
+  "mark": {"type": "geoshape", "stroke": "gray", "strokeOpacity": 0.6}, 
+  "data": {
+    "values": [
+      {"type": "LineString", "coordinates": [[-180, -90], [-180, 90]]},
+      {"type": "LineString", "coordinates": [[0, -90], [0, 90]]}, 
+      {"type": "LineString", "coordinates": [[180, -90], [180, 90]]}
+    ]
+  }
+},
+{
+  "mark": {"type": "geoshape", "stroke": "gray", "strokeOpacity": 0.6}, 
+  "data": {
+    "values": [
+      {"type": "LineString", "coordinates": [[-180, -90], [180, -90]]}, 
+      {"type": "LineString", "coordinates": [[-180, 0], [180, 0]]}, 
+      {"type": "LineString", "coordinates": [[-180, 90], [180, 90]]} 
+    ]
+  }
+},
+{
+  "mark": {
+    "type": "text",
+    "fontSize": 12,
+    "fontWeight": "normal",
+    "align": "right",
+    "baseline": "middle"
+  },
+  "encoding": {
+    "text": {
+      "field": "label", 
+      "type": "nominal"
+    },
+    "longitude": {
+      "field": "longitude", 
+      "type": "quantitative"
+    },
+    "latitude": {
+      "field": "latitude", 
+      "type": "quantitative"
+    }
+  },
+  "data": {
+    "values": [
+      {"label": "180° W", "longitude": -180, "latitude": 0},
+      {"label": "0°", "longitude": 0, "latitude": 0},
+      {"label": "180° E", "longitude": 180, "latitude": 0},
+      {"label": "90° S", "longitude": 0, "latitude": -90},
+      {"label": "90° N", "longitude": 0, "latitude": 90}
+    ]
+  }
+}
+]
+}
+
+
+    
