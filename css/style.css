@@ -1,0 +1,32 @@
+
+h1{
+	font-weight: 600;
+	font-family: "Times New Roman", Times, serif;
+	color: #c7e40c;
+  }
+
+  p{
+	color: #c7e40c;
+
+  }
+
+  #bar_chart {
+	font-family: "Times New Roman", Times, serif;
+	left: 500px;
+	right: 200px;	
+}
+
+#choropleth_map {
+	font-family: "Times New Roman", Times, serif;
+	left: 200px;
+	right: 200px;	
+}
+
+
+.pure-g{
+	margin-bottom: 100px;
+  }
+  .small-font{
+	  font-size: 14px;
+  }
+
