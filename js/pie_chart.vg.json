@@ -1,0 +1,93 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Top 5 total net migration in Austrilia in recent 10 years",
+  "width": 380,
+  "height": 218,
+  "data": {
+    "url": "https://raw.githubusercontent.com/RunqiXu/Visualisation2-/main/top5total.csv"
+  },
+  "transform": [
+    {
+      "calculate": "datum.Total/1000",
+      "as": "count"
+    },
+    {
+      "calculate": "(datum.Total/1079270)",
+      "as": "percentage_total"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "arc",
+        "outerRadius": 100,
+        "cornerRadius": 10,  
+        "innerRadius": 50  
+      },
+      "encoding": {
+        "theta": {
+          "field": "count",
+          "type": "quantitative",
+          "title": "Net Migration",
+          "stack": true
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "United Kingdom",
+              "China",
+              "Philippines",
+              "India",
+              "Nepal"
+            ],
+            "scheme": "lightmulti" 
+          }
+          
+        },
+        "tooltip": [
+          {
+            "field": "Country",
+            "type": "nominal",
+            "title": "Country"
+          },
+          {
+            "field": "count",
+            "type": "quantitative",
+            "title": "Net Migration",
+            "format": ".2f"
+          },
+          {
+            "field": "percentage_total",
+            "type": "quantitative",
+            "title": "Net Migration Percentage",
+     
+            "format": ".2f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 10,
+        "fontWeight": "bold",
+        "color": "white",
+        "align": "center",
+        "baseline": "middle"
+      },
+      "encoding": {
+        "text": {
+          "field": "percentage_total",
+          "type": "quantitative",
+          "format": ".1%"
+        }
+
+      }
+    }
+
+
+  ],
+  "config": {}
+}
