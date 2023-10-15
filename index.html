@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script> 
+  
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+  <title> Net overseas migration by country of birth, Australia</title>
+
+  <style>
+    h1 {text-align: center;}
+    p {text-align: center;}
+  </style>
+
+</head>
+
+<body style="background: lightblue">
+  <br>
+  <body>
+
+    
+  <div class="page">
+     <div class="pure-g">
+      <div class="pure-u-1-1">
+        <div class="description description-left">
+        <h1 style="font-family: 'Your-Font-Name', sans-serif; color: skyblue;">Population of immigrants in Australia: A Study on Immigrants' Countries of Birth.</h1>
+        <p class="left-align">Dear Visitor,<br>
+          <br>Welcome to this captivating journey. Here, we will explore the marvelous world of Australia's diverse culture together. <b>Australia</b> has always been renowned for its pleasant climate, breathtaking natural landscapes, and rich cultural diversity. As a <b>nation of immigrants</b>, Australia has attracted people from all corners of the globe, each bringing dreams and hopes to establish a home in this beautiful land.
+          <br>
+          <br><b>Overseas migration</b>, overall, provides a profound understanding of <b>international population mobility</b> and <b>social diversity</b>. It serves as a valuable reference for studying social, economic, and cultural phenomena, offering crucial insights into the dynamics of societies worldwide.
+        </p>
+      </div>
+     </div>
+    </div>
+
+
+   <div class="left-align">
+    <div class="pure-u-1-1"></div>
+    <div id="choropleth_map"></div>
+  </div>
+
+<div class="pure-g">
+  <div class="pure-u-1-1">
+    <p class="left-align">The map visualization illustrates <b>the population of immigrants from various countries.</b> worldwide moving to Australia.It allows observation of overseas migration numbers from the year <b>2010 to 2021</b>, enabling an understanding of how the population of immigrants from different countries and regions to Australia has changed over time. It's important to note that due to the global outbreak of the <b>novel coronavirus in 2020</b>, Australia implemented policies restricting and banning entry from many countries, resulting in missing data for numerous nations. Therefore, we have not considered the global immigration population data for the year <b>2020</b>.
+    </p>
+    <p class="left-align no-top-margin"><b>Generally, Southeast Asia, East Asia, South Asia, and the Middle East</b> are the <b>most</b> frequent regions involved in overseas migration exchange with Australia. Among the countries in these regions, <b>China</b> and <b>India</b> consistently hold leading positions.
+    </p>
+    <br>
+    <h2 class="no-top-margin" style="font-family: 'Your-Font-Name', sans-serif; color: skyblue;">Exploring Australia's Decade of Immigration: A Journey Through the Diversity of the Top Five Countries</h2>
+    <p class="left-align">
+      Welcome to a Multidimensional Exploration of Australia's Immigration Wave!
+      You are about to embark on a journey through time and space. Throughout this expedition, we will guide you through the influx and evolution of Australia's immigration wave <b>over the past decade</b>. Australia has always taken pride in its open arms and multiculturalism. Over the past ten years, this country has witnessed people from all corners of the globe choosing Australia as their new home.  
+      On this website, we delve deep into the immigration data of the <b>top five countries each year over the past decade</b>. These numbers are more than just digits; they mark the beginning of stories, bear witness to the blending of diverse cultures, and serve as proof of dreams flourishing in a foreign land.
+    </p>
+  </div>
+
+
+    <div class="pure-g">
+     <div class="pure-u-1-2">
+       <div id="bar_chart" class="bar-chart-box"></div>
+     </div>
+
+     <div class="pure-u-1-2">
+       <div id="pie_chart" class="pie-chart-box"></div>
+     </div>
+   </div>
+ 
+    <div class="pure-u-1-2">
+      <div class="description description-left">
+        <p class="left-align no-top-margin" >In this dynamic bar chart, we have compiled data for the <b>top five countries with the highest immigration numbers each year</b>. The top five countries vary annually. However, the most frequently appearing countries are the <b>United Kingdom, China, the Philippines, India, and Nepal</b>. </p>
+      </div>
+    </div>
+    <div class="pure-u-1-2">
+      <p class="left-align "> The pie chart illustrates the <b>contributions of each country to the total immigration from the top 5 countries over the last decade</b>. The <b>United Kingdom, China, the Philippines, India, and Nepal</b> are leading contributors, with <b>India making the largest contribution</b>.</p>
+    </div>
+
+
+      <div class="pure-u-1-1">
+        <div class="description description-left">
+          <h2 class="no-top-margin" style="font-family: 'Your-Font-Name', sans-serif; color: skyblue;">Explore the Footprints of Malaysians in Australia: 2004 to 2021</h2>
+          <p class="left-align">
+            Welcome to this journey through the <b>Malaysian</b> migration wave in Australia! <b>Over the past seventeen years</b>, Australia has witnessed an influx of immigrants from Malaysia—a journey filled with dreams, opportunities, and challenges. On this website, we have gathered and presented data on the number of Malaysians immigrating to Australia from <b>2004 to 2021</b>.
+          </p>
+        </div>
+      </div>
+ 
+
+      <div class="pure-g">
+        <div class="pure-u-1-1"></div>
+        <div id="line_chart"></div>
+      </div>
+      <div class="pure-u-1-1">
+        <div class="description description-left">
+          <p class="left-align">
+            In the line graph, we can observe that, except for the impact of the new coronavirus in <b>2020</b>, the number of Malaysian immigrants to Australia remained in <b>a state of population influx</b> throughout the other years.
+            This graph represents more than just a series of numbers; it encapsulates the diversity of cultures in Australia. Behind every point and every line lies a family's migration, an individual's choice, a fusion of cultures and values. Through this visual representation, we hope to illustrate the trajectory of the Malaysian migration wave, providing you with a deeper understanding of how this community has integrated and developed within Australia.
+          </p>
+  
+          <p class="left-align">
+            Please feel free to explore our data visualization, uncover the stories behind the numbers, and discover the human emotions hidden within the digits. We believe that within this ocean of data, you will find inspiring insights that pave the way for the future of our diverse society.<br>
+            <br>
+            Thank you for your visit! Hope you find knowledge and inspiration on this journey.<br>Wishing you a pleasant experience!<br>
+            <br>
+            Warm regards,
+          </p>
+        </div>
+      </div>
+      <div class="pure-u-1-1 small-font">
+        <p class="center">This visualisation is created by Runqi Xu. The datasource is <a href="https://www.abs.gov.au/statistics/people/population/overseas-migration/2021-22-financial-year#data-downloads" target="_blank">Net overseas migration by country of birth in Australia</href>.</p>
+      </div>
+
+    </div>
+</div>
+
+<script type="text/javascript">
+  var spec1 = "js/choropleth_map.vg.json";
+  var spec2 = "js/bar_chart.vg.json";
+  var spec3 = "js/pie_chart.vg.json";
+  var spec4 = "js/line_chart.vg.json";
+
+  vegaEmbed('#choropleth_map', spec1, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  vegaEmbed('#bar_chart', spec2, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  vegaEmbed('#pie_chart', spec3, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  vegaEmbed('#line_chart', spec4, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+
+</script>
+
+  
+  
+
+</body>
+
+</html>
