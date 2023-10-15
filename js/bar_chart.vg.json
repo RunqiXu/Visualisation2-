@@ -1,30 +1,47 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 300,
-  "height": 150,
-  "title": "Top 10 Net Migration by Country of Birth",
+  "height": 200,
+  "title": "Top 5 Net Migration by Country of Birth",
   "config": {
     "view": {
       "stroke": "transparent"
     }
   },
   "data": {
-    "url": "https://raw.githubusercontent.com/RunqiXu/Homework10/main/Top10newdata.csv"
+    "url": "https://raw.githubusercontent.com/RunqiXu/Visualisation2-/main/top5.csv"
   },
   "params": [
     {
       "name": "Year_selection",
+      "value": 2010,
       "bind": {
         "input": "select",
         "options": [
-          null,
+          2010,
+          2011,
+          2012,
+          2013,
+          2014,
+          2015,
+          2016,
+          2017,
+          2018,
           2019,
           2021
         ],
         "labels": [
-          "show all",
-          "2019",
-          "2021"
+          "2010",
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2021"
         ],
         "name": "Year: "
       }
@@ -39,6 +56,7 @@
     "y": {
       "field": "Country of birth",
       "type": "nominal",
+      "title": "Country of birth",
       "axis": {
         "grid": false
       }
@@ -46,12 +64,17 @@
     "x": {
       "field": "Net Migration",
       "type": "quantitative",
-      "title": "Net Migration",
+      "title": "Net Migration (people)",
       "axis": {
         "grid": false
       }
     },
     "tooltip": [
+        {
+        "field": "Year",
+        "type": "nominal",
+        "title": "Year"
+        },
         {
             "field": "Country of birth",
             "type": "nominal",
@@ -64,16 +87,21 @@
         }   
             ]
   },
+  
   "layer": [
     {
-      "mark": "bar"
+      "mark": {
+        "type": "bar",
+        "fill": "skyblue"  
+      }
     },
     {
       "mark": {
         "type": "text",
         "align": "left",
-        "baseline": "middle",
-        "dx": 3
+        "baseline": "middle", 
+        "dx": -40,
+        "dy":0
       },
       "encoding": {
         "text": {

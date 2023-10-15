@@ -1,0 +1,61 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Trend of Net Migration in Malaysia from 2004 and 2021",
+    "fontSize": 18  
+  },
+  "width": 900,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/RunqiXu/Visualisation2-/main/Malaysian.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "color": "skyblue"  
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "nominal",
+          "title": "Year"
+        },
+        "y": {
+          "field": "Net Migration",
+          "type": "quantitative",
+          "title": "Net Migration (people)"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "color": "skyblue"  
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Net Migration",
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "Year",
+            "type": "nominal",
+            "title": "Year"
+          },
+          {
+            "field": "Net Migration",
+            "type": "quantitative",
+            "title": "Net Migration (people)"
+          }
+        ]
+      }
+    }
+  ]
+}
